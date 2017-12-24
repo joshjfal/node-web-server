@@ -1,6 +1,8 @@
 const express = require("express");
 const hbs = require("hbs");
 
+const port = process.env.PORT || 3000; //if environment port not available use 3000.
+
 var app = express(); //Call method, no arguments to specify
 
 //Register partials and give it a directory
@@ -51,6 +53,6 @@ app.get("/bad", (req, res) => {
   })
 });
 
-app.listen(3000, () => {
-  console.log("Server is online and listening.");
+app.listen(port, () => {
+  console.log(`Server is online and listening on port ${port}.`);
 }); // Listens on the port you specify: 3000. Second argument can be used to trigger when server started but not required.
